@@ -62,4 +62,17 @@ public class ConditionTests {
         Assert.assertNotNull(result);
         Assert.assertEquals("Four", result);
     }
+
+    @Test
+    public void shouldReturn_Five_When_Input_Doesnt_Match_Anything() {
+        //Arrange
+        String input = "Something";
+
+        //Act
+        String result = main.condition(input);
+
+        //Assert
+        Assert.assertNotNull(result);
+        Assert.assertEquals("Five", result);
+    }
 }
