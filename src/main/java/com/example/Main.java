@@ -64,8 +64,11 @@ public class Main {
     public Map<String, List<String>> complexMaps(String key, String... items) {
         Map<String, List<String>> newComplexMap = new HashMap<>();
         if (key == null || items == null) {
-            return Collections.EMPTY_MAP;
+            newComplexMap =  Collections.EMPTY_MAP;
+        } else {
+            List<String> changeItems = Arrays.asList(items);
+            newComplexMap.put(key, changeItems);
         }
-        return null;
+        return newComplexMap;
     }
 }
