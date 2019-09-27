@@ -44,24 +44,28 @@ public class Main {
     public List<String> lists(String... items) {
         List<String> newList;
         if(items == null) {
-            return Collections.EMPTY_LIST;
+            newList = Collections.EMPTY_LIST;
         } else {
                 newList = Arrays.asList(items);
-                return newList;
         }
+        return newList;
     }
 
     public Map<String, String> maps(String key, String item) {
         Map<String, String> myMap = new HashMap<>();
-        if (item == null || key == null) {
-            return Collections.EMPTY_MAP;
+        if (key == null || item == null) {
+             myMap = Collections.EMPTY_MAP;
         } else {
             myMap.put(key, item);
-            return myMap;
         }
+        return myMap;
     }
 
     public Map<String, List<String>> complexMaps(String key, String... items) {
+        Map<String, List<String>> newComplexMap = new HashMap<>();
+        if (key == null || items == null) {
+            return Collections.EMPTY_MAP;
+        }
         return null;
     }
 }
