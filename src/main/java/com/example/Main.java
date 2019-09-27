@@ -10,18 +10,34 @@ public class Main {
     }
 
     public String condition(String item) {
+        //Improved answer after review
         if (item == null) {
             return "One";
-        } else {
-            if (item.equals("Number")) {
+        }
+        if (item.isEmpty()) {
+            return "Four";
+        }
+        switch (item) {
+            case "Number":
                 return "Two";
-            } else if (item.equals("Another")) {
+            case "Another":
                 return "Three";
-            } else if (item.isEmpty()) {
-                return "Four";
-            } else {
+            default:
                 return "Five";
-            }
+
+//        Previous answer
+//        if (item == null) {
+//            return "One";
+//        } else {
+//            if (item.equals("Number")) {
+//                return "Two";
+//            } else if (item.equals("Another")) {
+//                return "Three";
+//            } else if (item.isEmpty()) {
+//                return "Four";
+//            } else {
+//                return "Five";
+//            }
         }
     }
 
