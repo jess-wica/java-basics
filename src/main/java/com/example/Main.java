@@ -42,30 +42,27 @@ public class Main {
     }
 
     public List<String> lists(String... items) {
-        List<String> newList;
-        if(items == null) {
-            return Collections.EMPTY_LIST;
+        List<String> newList = new ArrayList<>();
+        if(items != null) {
+            newList = Arrays.asList(items);
         }
-        newList = Arrays.asList(items);
         return newList;
     }
 
     public Map<String, String> maps(String key, String item) {
         Map<String, String> myMap = new HashMap<>();
-        if (key == null || item == null) {
-             return Collections.EMPTY_MAP;
+        if (key != null && item != null) {
+            myMap.put(key, item);
         }
-        myMap.put(key, item);
         return myMap;
     }
 
     public Map<String, List<String>> complexMaps(String key, String... items) {
         Map<String, List<String>> newComplexMap = new HashMap<>();
-        if (key == null || items == null) {
-            return  Collections.EMPTY_MAP;
+        if (key != null && items != null) {
+            List<String> changeItems = Arrays.asList(items);
+            newComplexMap.put(key, changeItems);
         }
-        List<String> changeItems = Arrays.asList(items);
-        newComplexMap.put(key, changeItems);
         return newComplexMap;
     }
 }
